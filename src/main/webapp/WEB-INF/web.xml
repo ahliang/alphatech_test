@@ -16,6 +16,7 @@
         <servlet-name>alphaTech</servlet-name>
         <url-pattern>/dashboard/*</url-pattern>
         <url-pattern>/report/getReportData</url-pattern>
-        <url-pattern>/analysis</url-pattern>
+        <url-pattern>/analysis/*</url-pattern>
+        <url-pattern>/perform-analysis</url-pattern>
     </servlet-mapping>
 </web-app>
