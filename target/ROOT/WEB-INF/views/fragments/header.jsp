@@ -21,6 +21,7 @@
 					<span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+			<li class="nav-item"><a class="nav-link" href="/analysis">Analysis</a></li>
 			<li class="nav-item"><a class="nav-link disabled" href="#">Coming
 					Soon...</a></li>
 		</ul>
