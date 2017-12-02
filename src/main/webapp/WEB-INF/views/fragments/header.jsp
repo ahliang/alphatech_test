@@ -22,9 +22,11 @@
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
 			<li class="nav-item"><a class="nav-link" href="/analysis">Analysis</a></li>
+			<li class="nav-item"><a class="nav-link" href="/promo">Promotions</a></li>
 			<li class="nav-item"><a class="nav-link disabled" href="#">Coming
 					Soon...</a></li>
 		</ul>
 	</div>
 	</nav>
+	<div style="height:70px;">&nbsp;</div>
 </div>

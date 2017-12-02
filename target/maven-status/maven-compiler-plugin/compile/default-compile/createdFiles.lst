@@ -1,2 +1,4 @@
+com\aws\codestar\projecttemplates\controller\PromoController.class
+com\aws\codestar\projecttemplates\controller\AnalysisController.class
 com\aws\codestar\projecttemplates\controller\ReportController.class
 com\aws\codestar\projecttemplates\controller\DashboardController.class
