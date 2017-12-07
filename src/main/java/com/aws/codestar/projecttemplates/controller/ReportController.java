@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.*;
 import org.springframework.web.bind.annotation.*; 
 import org.springframework.util.*;
@@ -27,15 +30,27 @@ public class ReportController {
     	options.put("responsive", true);
     	options.put("maintainAspectRatio", false);
     	reportData.put("options", options);
+    	
     	return reportData;
     }
     
     // this method should retrieve from service in the future
 	@RequestMapping(value = "/report/getReportData", method = RequestMethod.POST)
-	public @ResponseBody LinkedHashMap<Object, Object> getReportData(@RequestBody String reportName) {
+	public @ResponseBody LinkedHashMap<Object, Object> getReportData(@RequestBody String formData) {
 		
 		LinkedHashMap<Object, Object> reportData = new LinkedHashMap<Object, Object>();
 		reportData = defaultConfiguration(reportData);
+		LinkedHashMap<Object, Object> myMap = new LinkedHashMap<Object, Object>();
+
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		try {
+			myMap = objectMapper.readValue(formData, LinkedHashMap.class);
+			reportData.put("type", myMap.get("chartType"));
+		}
+		catch (Exception ex) {
+			reportData.put("type", "undefined");
+		}
 		
 		LinkedHashMap<Object, Object> dataMap = new LinkedHashMap<Object, Object>();
 		//List<String> labels = Arrays.asList("June", "July", "August", "September", "October", "November", "December");
@@ -54,11 +69,13 @@ public class ReportController {
 		dataSet2.put("borderColor", "green");
 		dataSet2.put("backgroundColor", "green");
 		
-		ArrayList dataSets = new ArrayList();
+		ArrayList<LinkedHashMap<Object, Object>> dataSets = new ArrayList<LinkedHashMap<Object, Object>>();
 		dataSets.add(dataSet1);
 		dataSets.add(dataSet2);
 		dataMap.put("labels", new String[] { "June", "July", "August", "September", "October", "November", "December" });
 		dataMap.put("datasets", dataSets);
+		
+		reportData.put("data", dataMap);
 		// data partially empty
 		return reportData;
 	}
