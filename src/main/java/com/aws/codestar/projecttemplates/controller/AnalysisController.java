@@ -33,19 +33,14 @@ public class AnalysisController {
     }
 
     @RequestMapping(value = "/perform-analysis", method = RequestMethod.POST)
-    public String runAnalysisScript(HttpServletRequest request) {
+    public String runAnalysisScript(HttpServletRequest request) throws IOException {
         
         String url_link = request.getParameter("url_link");
         String anal_type = request.getParameter("anal_type");
 
-        try {
-			Process p = Runtime.getRuntime().exec("python yourapp.py");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        Process p = Runtime.getRuntime().exec("python C:\\script\\hello.py", arg=[url_link, anal_type]);
 
-        return url_link;        
+        return "Python script successfully run!";                                                
     }
 
 }
