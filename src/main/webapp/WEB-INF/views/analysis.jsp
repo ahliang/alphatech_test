@@ -10,7 +10,7 @@
     <body>
         <div class="form-container" style="margin-top:50px">
             <h1>New Analysis</h1>
-            <form class="form-horizontal" action="/perform-analysis" method="POST">
+            <form class="form-horizontal" action="/performAnalysis" method="POST">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="email">Facebook Post Link:</label>
                     <div class="col-sm-10">
