@@ -11,5 +11,6 @@
  <body>
      <h2>${url_link}</h2>
      <h2>${anal_type}</h2> 
-     <h3>v2.0</h3>   
+     <h2>${python_output}</h2>
+     <h3>v4.0</h3>   
  </body>
