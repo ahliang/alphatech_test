@@ -33,12 +33,7 @@ public class AnalysisController {
     }
 
     @RequestMapping(value = "/performAnalysis", method = RequestMethod.POST)
-    public ModelAndView runAnalysisScript(HttpServletRequest request) throws IOException {
-        
-        String url_link = request.getParameter("url_link");
-        String anal_type = request.getParameter("anal_type");
-
-        // Process p = Runtime.getRuntime().exec("python C:\\script\\hello.py", arg=[url_link, anal_type]);
+    public M Runtime().exec("python C:\\script\\hello.py", arg=[url_link, anal_type]);
         // return "Python script successfully run!";
         ModelAndView mav = new ModelAndView("results");
         mav.addObject("url_link", url_link);
