@@ -37,6 +37,12 @@ a[aria-expanded="true"]::before {
     #sidebar.active {
         margin-left: 0;
     }
+    .vertical-center {
+		min-height: auto;
+	}
+	.card-block {
+		display: none;
+	}
 }
 
 /*
@@ -100,8 +106,47 @@ a, a:hover, a:focus {
     color: #fff;
     background: #6d7fcc;
 }
+
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
+}
+
+/*promotion page*/
+.card-deck {
+	vertical-align: middle;
+	height: 90vh;
+	align-items: center;
+}
+.card {
+	max-width: 350px;
+	height: 500px;
+}
+.no-pad {
+	padding: 0;
+}
+.padded {
+	padding: 15px;
+}
+.promo-img {
+	width: -webkit-fill-available;
+	height: 200px;
+	align-self: center;
+}
+.add-img {
+	opacity: 0.7;
+}
+.v-align {
+	margin-top: 40%;
+}
+.required {
+	color: red;
+	font-weight: bold;
+}
+#promoDesc {
+	overflow-x: hidden;
+}
+#promoFrom {
+	display: none;
 }

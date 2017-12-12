@@ -27,6 +27,8 @@
 		var myChart;
 		var imgUrl;
 		var popup;
+		var ctx = $('#myChart');
+		var config;
 		
 		function exportChart() {
 			imgUrl = myChart.toBase64Image();
@@ -46,7 +48,7 @@
 				popup.close();
 			}
 		}
-		
+		/*
 		// sample data, to use ajax in near future
 		var config = {
 			type : 'bar',
@@ -82,39 +84,43 @@
 				}
 			}
 		};
-	
-		var ctx = $('#myChart');
-		myChart = new Chart(ctx, config);
+		*/
 
 		// should use serialize with real form
 		var formData = {
-			'reportName' : 'abc'
+			'chartType' : 'bar'
 		};
-		/*
-		$.ajax({
-			headers : {
-				'Accept' : 'application/json',
-				'Content-Type' : 'application/json'
-			},
-			type : "POST",
-			url : "${home}report/getReportData",
-			dataType : 'json',
-			data : JSON.stringify(formData),
-			success : function(data) {
-				config = data;
-				//console.log("DATA: ", config);
-				var ctx = $('#myChart');
-				myChart = new Chart(ctx, config);
-			},
-			error : function(e) {
-				console.log("ERROR: ", e);
-			}
-		});
-		*/
+
+		function plotChart() {
+			$.ajax({
+				headers : {
+					'Accept' : 'application/json',
+					'Content-Type' : 'application/json'
+				},
+				type : "POST",
+				url : "${home}report/getReportData",
+				dataType : 'json',
+				data : JSON.stringify(formData),
+				success : function(data) {
+					config = data;
+					//console.log("DATA: ", config);
+					config.options['scales'] = { 'yAxes': [{ 'ticks': { 'beginAtZero': true } }] };
+					config.options['animation'] = { 'onComplete': exportChart };
+					var ctx = $('#myChart');
+					myChart = new Chart(ctx, config);
+				},
+				error : function(e) {
+					console.log("ERROR: ", e);
+				}
+			});
+		}
+		
+		plotChart();
+		
 		$('#chartType').change(function() {
 			myChart.destroy();
-			config.type = this.value;
-			myChart = new Chart(ctx, config);
+			formData.chartType = this.value;
+			plotChart();
 		});
 	</script>
 </body>
