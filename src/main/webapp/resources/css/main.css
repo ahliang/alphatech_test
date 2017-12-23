@@ -114,12 +114,12 @@ ul ul a {
 }
 
 /*promotion page*/
-.card-deck {
+#promoDeck {
 	vertical-align: middle;
 	height: 90vh;
 	align-items: center;
 }
-.card {
+.promoCard {
 	max-width: 350px;
 	height: 500px;
 }
