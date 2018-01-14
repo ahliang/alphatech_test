@@ -10,15 +10,15 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 </head>
 <body class="container-fluid">
-	<div class="card-deck text-center">
-		<div class="card no-pad">
+	<div id="promoDeck" class="card-deck text-center">
+		<div class="card no-pad promoCard">
 			<img class="card-img-top promo-img padded" src="/resources/images/sample.jpg" alt="sample image" /><br />
 			<div class="card-block p-t-2">
 				<h4 class="card-title">Sample promo</h4>
 				<p class="card-text">lorem ipsum ......</p>
 			</div>
 		</div>
-		<div class="card no-pad" data-toggle="modal" data-target="#myForm">
+		<div class="card no-pad promoCard" data-toggle="modal" data-target="#myForm">
 			<img class="promo-img add-img padded v-align" src="/resources/images/svg/plus.svg" alt="add promo" />
 		</div>
 		<div class="col-xs-4"></div>

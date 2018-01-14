@@ -32,8 +32,8 @@
                         <button type="submit" class="btn btn-default">Submit</button>
                     </div>
                 </div>
+        	</form>
         </div>
-        </form>
     </body>
 
     </html>

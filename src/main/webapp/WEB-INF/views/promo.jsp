@@ -18,7 +18,7 @@
 				<p class="card-text">lorem ipsum ......</p>
 			</div>
 		</div>
-		<div class="card no-pad" data-toggle="modal" data-target="#myForm">
+		<div class="card no-pad promoCard" data-toggle="modal" data-target="#myForm">
 			<img class="promo-img add-img padded v-align" src="/resources/images/svg/plus.svg" alt="add promo" />
 		</div>
 		<div class="col-xs-4"></div>

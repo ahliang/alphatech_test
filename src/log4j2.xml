@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+		</Console>
+		<RollingFile name="LogFile" fileName="logs/console.log" filePattern="logs/%d{yyyy-MM-dd_HH:mm:ss}_console.log.zip">
+			<PatternLayout pattern="%d{yyyy MM dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+			<Policies>
+				<TimeBasedTrigerringPolicy interval="24"/>
+				<SizeBasedTrigerringPolicy size="300 MB"/>
+			</Policies>
+			<DirectWriteRolloverStretegy/>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="LogFile"/>
+		</Root>
+	</Loggers>
+</Configuration>

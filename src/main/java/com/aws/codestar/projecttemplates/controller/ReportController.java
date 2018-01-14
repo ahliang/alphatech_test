@@ -3,14 +3,11 @@ package com.aws.codestar.projecttemplates.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.*;
-import org.springframework.web.bind.annotation.*; 
-import org.springframework.util.*;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Basic Spring MVC controller that handles all GET requests.
@@ -18,10 +15,7 @@ import org.springframework.util.*;
 @Controller
 public class ReportController {
 
-    private final String siteName;
-
     public ReportController() {
-        this.siteName = "report";
     }
     
     private LinkedHashMap<Object, Object> defaultConfiguration(LinkedHashMap<Object, Object> reportData) {
@@ -35,6 +29,7 @@ public class ReportController {
     }
     
     // this method should retrieve from service in the future
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/report/getReportData", method = RequestMethod.POST)
 	public @ResponseBody LinkedHashMap<Object, Object> getReportData(@RequestBody String formData) {
 		
